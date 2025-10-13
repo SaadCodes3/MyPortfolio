@@ -120,7 +120,7 @@ section {
 }
 
 .card {
-  background-color: #fff;
+  background:linear-gradient(#00bbff54,#005eff62);
   flex: 1 1 calc(33.333% - 40px);
   min-width: 250px;
   max-width: 350px;
