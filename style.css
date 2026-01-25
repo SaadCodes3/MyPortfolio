@@ -12,6 +12,28 @@
   --text-color: #e0e0e0;
   --primary-color: #90caf9;
 }
+/*  Scroll-button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 50px; 
+  right: 15px;
+  padding: 12px 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(#00bbff, #005eff);
+  color: white;
+  cursor: pointer;
+  display: none; /* مخفي في البداية */
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.1);
+}
+
 
 /* Header */
 header {
@@ -164,7 +186,7 @@ section {
   border-radius: 10px;
   padding: 25px;
   margin: 15px;
-  transition: 0.7s ease;
+  transition: 0.2s ease;
 }
 
 .card:hover {
@@ -403,8 +425,9 @@ body.dark .project-card {
   background-color: #1e1e1e;
   border-color: #333;
 }
-/* button */
-body.dark .main-btn {
+/* buttons */
+body.dark .main-btn,
+body.dark #scrollTopBtn{
   background: linear-gradient(#1f6feb, #0d419d);
   color: #ffffff;
 }
