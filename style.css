@@ -283,6 +283,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 .footer-title span {
   color: #3a6cf4;
