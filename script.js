@@ -1,10 +1,11 @@
-//
-const toggleBtn = document.getElementById("theme-toggle");
+//dark mode button
+const toggleBtn = document.getElementById("theme-switch");
 
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
-//scroll button
+
+//scroll-to-top button
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {

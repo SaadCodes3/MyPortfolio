@@ -51,30 +51,25 @@ header {
   align-items: center;
 }
 /* dark mode button */
-.theme-switch {
-  width: 52px;
-  height: 26px;
-  margin-left: 15px;
+#theme-switch{
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
   background-color: #ccc;
-  border-radius: 50px;
+  border: #000016 solid 2px;
+  border-radius: 50%;
   cursor: pointer;
   position: relative;
-  transition: background-color 0.3s ease;
-}
-
-.switch-circle {
-  width: 22px;
-  height: 22px;
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: 2px;
-  left: 2px;
+  transition: background-color 0.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-  font-size: 14px;
+}
+.moon-toggle {
+  display: none;
+}
+#theme-switch svg {
+  display: block;
 }
 
 .logo {
@@ -355,8 +350,17 @@ color: #601cfc;
     width: 100%;
     font-size: 1em;
   }
-  .theme-switch {
+  #theme-switch {
   flex-shrink: 0;
+  }
+    #theme-switch {
+    width: 32px;
+    height: 32px;
+  }
+
+  #theme-switch svg {
+    width: 20px;
+    height: 20px;
   }
   .main-content h2 {
     font-size: 0.8em;
@@ -445,10 +449,13 @@ body.dark .footer {
   color: #ccc;
 }
 
-body.dark .theme-switch {
+body.dark #theme-switch {
   background-color: #1f6feb;
 }
 
-body.dark .switch-circle {
-  transform: translateX(24px);
+body.dark .sun-toggle {
+  display: none;
+}
+body.dark .moon-toggle {
+  display: block;
 }
