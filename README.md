@@ -1,29 +1,29 @@
 # My Portfolio
 
-هذا مشروع بورتفوليو شخصي قمت بتطويره لعرض مهاراتي ومشاريعي في مجال Front-End Development.
+This is a personal portfolio project I developed to showcase my skills and projects in Front-End Development.
 
-تم بناء المشروع باستخدام تقنيات الويب الأساسية مع التركيز على التصميم المتجاوب وتجربة المستخدم.
+The project was built using core web technologies with a focus on responsive design and user experience.
 
-## 🛠️ التقنيات المستخدمة
+## 🛠️ Technologies Used
 - HTML
 - CSS (Responsive Design)
 - JavaScript
 
-## ✨ المميزات
-- تصميم متجاوب يعمل على الموبايل، التابلت، والكمبيوتر
-- Dark / Light Mode مع زر تبديل
-- Navbar متجاوب مع تغيير حجم الشاشة
-- صفحة رئيسية للتعريف
-- قسم لعرض المهارات
-- قسم لعرض المشاريع
-- قسم للتواصل
+## ✨ Features
+- Fully responsive design (mobile, tablet, desktop)
+- Dark / Light mode toggle
+- Responsive navbar
+- Home section (About me)
+- Skills section
+- Projects section
+- Contact section
 
-## 📂 محتويات المشروع
-- `index.html` – الهيكل الأساسي للموقع  
-- `style.css` – تنسيقات الموقع والتصميم المتجاوب  
-- `script.js` – التفاعلات (Dark Mode وغيرها)
+## 📂 Project Structure
+- `index.html` – Main structure of the website  
+- `style.css` – Styling and responsive design  
+- `script.js` – Interactions (Dark mode, etc.)
 
-## 🚀 طريقة التشغيل
-1. قم بتحميل المشروع أو عمل Clone:
+## 🚀 How to Run
+1. Clone the repository:
    ```bash
    git clone https://github.com/SaadCodesMyPortfolio.git
