@@ -62,3 +62,35 @@ scrollBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+// Typing Animation / Typewriter Effect
+const textArray = ["Front-End Developer", "Web Developer", "JavaScript Developer"];
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  const currentText = textArray[index];
+
+  if (!isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentText.length) {
+      setTimeout(() => isDeleting = true, 1500);
+    }
+  } else {
+    typingElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % textArray.length;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 100 : 150);
+}
+
+typeEffect();

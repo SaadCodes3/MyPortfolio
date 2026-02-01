@@ -197,6 +197,15 @@ header {
   font-weight: 700;
   text-shadow: 4px 4px black;
 }
+/* Typing Animation / Typewriter Effect */
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%,50%,100% { opacity: 1; }
+  25%,75% { opacity: 0; }
+}
 .main h3 {
   color: var(--text-light-color);
   font-size: 2em;
@@ -227,8 +236,21 @@ header {
 }
 .main-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(0, 68, 255, 0.4); /* ظل أعمق عند hover */
+  box-shadow: 2px 2px 20px 10px rgba(0, 68, 255, 0.4); /* ظل أعمق عند hover */
 }
+.my-photo img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius-circle);
+  border: 5px solid var(--card-border-color);
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.6);
+  transition: 0.3s ease;
+  margin-left:70px;
+}
+.my-photo img:hover {
+  transform: scale(1.05);
+} 
 /* Skills */
 .title {
   display: flex;
@@ -448,6 +470,12 @@ header {
     width: 20px;
     height: 20px;
   }
+  .main {
+    flex-direction: column-reverse;
+  }
+  .main h2 span {
+    font-size: 2.3em;
+  }
   .main-content h2 {
     font-size: 1em;
   }
@@ -468,6 +496,9 @@ header {
 @media (max-width: 500px) {
   body {
     font-size: 12px;
+  }
+    .main h2 span {
+    font-size: 2em;
   }
   .content {
     flex-direction: column;
