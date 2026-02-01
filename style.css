@@ -127,6 +127,14 @@ header {
   align-items: center;
   gap: 10px;
 }
+/* theme-icon */
+body.dark .sun-toggle {
+  display: none;
+}
+body.dark .moon-toggle {
+  display: block;
+}
+
 /* menu-button */
 .menu-btn {
   display: none; /* يظهر فقط في الميديا كويري */
@@ -440,13 +448,10 @@ header {
     align-items: center;
   }
 }
-/* tablet */
+/* Tablet */
 @media (max-width: 768px) {
-  body {
-    font-size: 12px;
-  }
-  #theme-switch {
-    flex-shrink: 0;
+    body {
+    font-size: 13px;
   }
   #theme-switch {
     width: 32px;
@@ -457,56 +462,44 @@ header {
     height: 20px;
   }
   .main-content h2 {
-    font-size: 0.8em;
+    font-size: 1em;
   }
   .main-content h3 {
     font-size: 1.4em;
   }
   .footer {
-    padding: 0.8em;
+  margin-bottom: 0;
   }
   .footer-title {
     font-size: 1em;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
   }
   .footer .social-icons {
-    font-size: 0.9em;
-    padding: 0 4px 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1em;
   }
 }
-/* mobile */
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 500px) {
   body {
     font-size: 12px;
   }
   .content {
     flex-direction: column;
-    align-items: center;
   }
-  .footer {
-    padding: 0.8em;
+    .footer {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
   .footer-title {
-    font-size: 0.7em;
-    font-weight: 600;
+    font-size: 0.8em;
+    white-space: nowrap;
+  }
+  .footer .social-icons {
+    font-size: 1em;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 40%;
+    justify-content: space-around;
   }
 }
 
-/* theme-icon */
-body.dark .sun-toggle {
-  display: none;
-}
-body.dark .moon-toggle {
-  display: block;
-}
