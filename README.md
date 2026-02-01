@@ -1,4 +1,6 @@
 # My Portfolio
+## Preview
+![Portfolio Screenshot](images/screenshot.png)
 
 This is a personal portfolio project I developed to showcase my skills and projects in Front-End Development.
 
