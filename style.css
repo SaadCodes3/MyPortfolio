@@ -33,7 +33,8 @@ body {
 
   /* ===== Shadows ===== */
   --shadow-main: 5px 5px 10px rgba(1, 1, 1, 0.5);
-
+  --shadow-stronge: 2px 2px 20px 10px rgba(0, 68, 255, 0.4);
+  --shadow-box-n: 0 0 20px 10px rgba(0,0,0,0.6);
   /* ===== Radius ===== */
   --radius-sm: 6px;
   --radius-md: 15px;
@@ -110,7 +111,7 @@ header {
   border-radius: var(--radius-circle);
   cursor: pointer;
   position: relative;
-  border: 0px solid #000016;
+  border: 1px solid var(--text-dark-color);
   transition: background-color 0.5s ease-in-out;
   display: flex;
   align-items: center;
@@ -232,11 +233,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--shadow-main); 
+  box-shadow: var(--shadow-box-n); 
 }
 .main-btn:hover {
   transform: scale(1.05);
-  box-shadow: 2px 2px 20px 10px rgba(0, 68, 255, 0.4); /* ظل أعمق عند hover */
+  box-shadow: var(--shadow-stronge);
 }
 .my-photo img {
   width: 280px;
@@ -244,12 +245,13 @@ header {
   object-fit: cover;
   border-radius: var(--radius-circle);
   border: 5px solid var(--card-border-color);
-  box-shadow: 0 0 20px 10px rgba(0,0,0,0.6);
+  box-shadow: var(--shadow-box-n);
   transition: 0.3s ease;
   margin-left:70px;
 }
 .my-photo img:hover {
   transform: scale(1.05);
+  box-shadow: var(--shadow-stronge);
 } 
 /* Skills */
 .title {
@@ -345,7 +347,90 @@ header {
 .projects .project-title .watch:hover {
   color: var(--secondary-color);
 }
-/* Contact */
+
+/* ====================
+    about me section 
+   ==================== */
+.about h2{
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1000px;
+  margin: auto;
+}
+.about-text h3 {
+  margin-bottom: 10px;
+}
+.about-text p {
+  line-height: 1.6;
+}
+.about-text {
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+/* about image */
+.about-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.about-img img {
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.6);
+  transition: 0.3s ease;
+}
+.about-img img:hover{
+  transform: scale(1.05);
+  box-shadow: var(--shadow-stronge);
+}
+
+/* about buttons */
+.cv-button {
+  display: flex;
+  margin-top: 30px;
+}
+.cv-button .btn {
+  color: var(--text-light-color);
+  background: var(--gradient-main);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 0.7em 1.5em;
+  letter-spacing: 1px;
+  border-radius: var(--radius-md);
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  transition:
+    0.4s ease-in-out,
+    color 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-main); 
+}
+.cv-button .btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-stronge);
+}
+
+ 
+/* ================
+    Contact section
+  ================== */
+.contact{
+  background-color: var(--light-color);
+}
 .content .icon {
   font-size: 4.5em;
 }
@@ -482,6 +567,9 @@ header {
   .main-content h3 {
     font-size: 1.4em;
   }
+  .about-container {
+    flex-direction: column;
+  }
   .footer {
   margin-bottom: 0;
   }
@@ -503,7 +591,7 @@ header {
   .content {
     flex-direction: column;
   }
-    .footer {
+  .footer {
     padding: 10px;
     flex-direction: column;
     gap: 10px;
