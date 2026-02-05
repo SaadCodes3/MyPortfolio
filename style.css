@@ -321,13 +321,13 @@ header {
 }
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-box-n);
 }
 .project-tech {
   margin: 15px 0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   flex-wrap: wrap; 
 }
 .project-tech .tech-label {
@@ -341,7 +341,6 @@ header {
   padding: 5px 5px;
   border-radius: 6px;
   font-size: 15px;
-  margin-right: 5px;
 }
 .project-image img {
   width: 100%;
