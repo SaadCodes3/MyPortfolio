@@ -256,6 +256,7 @@ header {
 .my-photo img:hover {
   transform: scale(1.05);
   box-shadow: var(--shadow-stronge);
+  filter: brightness(1.1);
 } 
 /* ================
     Skills section
@@ -287,6 +288,7 @@ header {
 }
 .card:hover {
   transform: scale(1.1);
+  filter: brightness(1.2);
 }
 .icon {
   color: var(--primary-color);
@@ -322,6 +324,7 @@ header {
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-box-n);
+  filter: brightness(1.1);
 }
 .project-tech {
   margin: 15px 0;
