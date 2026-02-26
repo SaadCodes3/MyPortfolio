@@ -178,8 +178,8 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="#" target="_blank" class="btn github">GitHub</a>
-                        <a href="#" target="_blank" class="btn demo">Live Demo</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn github">GitHub</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn demo">Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -196,7 +196,7 @@
 
                     <p class="project-description">
                         A modern and responsive login form designed with focus on usability and form validation.
-
+                    </p>
                     <div class="project-tech">
                         <p class="tech-label">Tech:</p>
                         <span>HTML</span>
@@ -205,8 +205,10 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="https://github.com/SaadCodes3/login-form" target="_blank" class="btn github">GitHub</a>
-                        <a href="https://saadcodes3.github.io/login-form/" target="_blank" class="btn demo">Live Demo</a>
+                        <a href="https://github.com/SaadCodes3/login-form" target="_blank" rel="noopener noreferrer"
+                            class="btn github">GitHub</a>
+                        <a href="https://saadcodes3.github.io/login-form/" target="_blank" rel="noopener noreferrer"
+                            class="btn demo">Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -233,8 +235,10 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="https://github.com/SaadCodes3/Calculator-App" target="_blank" class="btn github">GitHub</a>
-                        <a href="https://saadcodes3.github.io/Calculator-App/" target="_blank" class="btn demo">Live Demo</a>
+                        <a href="https://github.com/SaadCodes3/Calculator-App" target="_blank" rel="noopener noreferrer"
+                            class="btn github">GitHub</a>
+                        <a href="https://saadcodes3.github.io/Calculator-App/" target="_blank" rel="noopener noreferrer"
+                            class="btn demo">Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -262,8 +266,10 @@
                     </div>
 
                     <div class="project-links">
-                        <a href="https://github.com/SaadCodes3/Weather-App" target="_blank" class="btn github">GitHub</a>
-                        <a href="https://saadcodes3.github.io/Weather-App/" target="_blank" class="btn demo">Live Demo</a>
+                        <a href="https://github.com/SaadCodes3/Weather-App" target="_blank" rel="noopener noreferrer"
+                            class="btn github">GitHub</a>
+                        <a href="https://saadcodes3.github.io/Weather-App/" target="_blank" rel="noopener noreferrer"
+                            class="btn demo">Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -296,39 +302,49 @@
         </div>
     </section>
     <!-- Contact Cards Section -->
-    <section class="cards contact" id="contact">
-        <h2 class="title">Let's work together</h2>
-        <div class="content">
-            <!-- Phone Card -->
-            <div class="card">
-                <div class="icon">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-                <div class="info">
-                    <h3>Phone</h3>
-                    <a href="tel:+201080153278">+201080153278</a>
-                </div>
-            </div>
-            <!-- Email Card -->
-            <div class="card">
-                <div class="icon">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="info">
-                    <h3>Email</h3>
-                    <a href="mailto:saadalhusseiny1@gmail.com">saadalhusseiny1@gmail.com</a>
-                </div>
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <h2 class="title">Let's work together</h2>
+            <!-- information -->
+            <h3>I'd like to hear from you!</h3>
+            <p>If you have any inquiries or just want to say hi ,please use the contact form!</p>
+            <!-- social icons -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/s3dhs/" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/s3dhs/" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/SaadCodes3" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saad-alhusseiny" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
+        <!-- form -->
+        <div class="contact-form">
+            <form action="/send" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
     </section>
     <!-- Footer -->
     <footer class="footer">
         <p class="footer-title">Copyrights © 2024 SaadALHusseiny</p>
         <div class="social-icons">
-            <a href="https://www.facebook.com/s3dhs/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/s3dhs/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/SaadCodes3" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/saad-alhusseiny" target="_blank"><i
+            <a href="https://www.facebook.com/s3dhs/" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/s3dhs/" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/SaadCodes3" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/saad-alhusseiny" target="_blank" rel="noopener noreferrer"><i
                     class="fa-brands fa-linkedin"></i></a>
         </div>
     </footer>
