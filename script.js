@@ -115,3 +115,10 @@ slider.addEventListener("mousemove", (e) => {
   const x = e.pageX - slider.offsetLeft;
   slider.scrollLeft = scrollLeft - (x - startX);
 });
+
+
+// تحديث سنة حقوق الملكية تلقائياً بناءً على السنة الحالية
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
