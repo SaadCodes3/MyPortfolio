@@ -117,8 +117,14 @@ slider.addEventListener("mousemove", (e) => {
 });
 
 
-// تحديث سنة حقوق الملكية تلقائياً بناءً على السنة الحالية
-const yearSpan = document.getElementById('year');
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
+// التحديث التلقائي لسطر حقوق الملكية مع المسافات
+const copyrightElement = document.getElementById('copyright-text');
+
+if (copyrightElement) {
+    const startYear = 2024;
+    const currentYear = new Date().getFullYear();
+    const ownerName = "SaadALHusseiny";
+
+  
+    copyrightElement.innerHTML = `Copyright © ${startYear} - ${currentYear} ${ownerName}`;
 }
