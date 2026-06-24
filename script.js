@@ -128,3 +128,12 @@ if (copyrightElement) {
   
     copyrightElement.innerHTML = `Copyright © ${startYear} - ${currentYear} ${ownerName}`;
 }
+
+
+// كود الماوس 
+const cursorGlow = document.getElementById('cursorGlow');
+if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+  window.addEventListener('mousemove', (e) => {
+    cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+  });
+}

@@ -49,6 +49,11 @@ body {
   --radius-md: 15px;
   --radius-lg: 20px;
   --radius-circle: 50%;
+
+  /* ===== Grid background tokens (light mode) ===== */
+  --grid-line: rgba(0, 0, 0, 0.04);
+  --grid-glow-1: rgba(31, 111, 235, 0.18);
+  --grid-glow-2: rgba(96, 28, 252, 0.14);
 }
 
 body.dark {
@@ -65,7 +70,77 @@ body.dark {
 
   /* ===== Gradients ===== */
   --gradient-main: linear-gradient(#1f6feb, #0d419d);
+
+  /* ===== Grid background tokens (dark mode) ===== */
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --grid-glow-1: rgba(144, 202, 249, 0.2);
+  --grid-glow-2: rgba(31, 111, 235, 0.18);
 }
+
+
+/* =========================================================
+   Animated Tech Grid Background
+   ========================================================= */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--light-color);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 42px 42px;
+  animation: gridDrift 60s linear infinite;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.bg-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(620px 420px at 14% 18%, var(--grid-glow-1) 0%, transparent 60%),
+    radial-gradient(560px 460px at 86% 32%, var(--grid-glow-2) 0%, transparent 60%);
+  animation: auroraShift 22s ease-in-out infinite alternate;
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 84px 84px, 84px 84px; }
+}
+
+@keyframes auroraShift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: .8; }
+  100% { transform: translate3d(-2%, 2%, 0) scale(1.08); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid, .bg-grid::before { animation: none; }
+}
+
+
+.cursor-glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--grid-glow-1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+@media (max-width: 768px) {
+  .cursor-glow { display: none; }
+}
+
+/* Section */
+section {
+  padding: 100px 100px;
+}
+
 
 /* Section */
 section {
@@ -97,8 +172,9 @@ section {
     Header section
    ================ */
 header {
-  background-color: var(--light-color);
-  width: 100%;
+  background-color: rgba(211, 211, 211, 0.292);  /* شفافية بدل الصلب */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);width: 100%;
   position: fixed;
   z-index: 999;
   display: flex;
@@ -192,7 +268,7 @@ header {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(assets/images/background.jpg) no-repeat;
+  background: url(assets/images/background.png) no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -546,7 +622,6 @@ body.dark .project-tech span {
     Contact section
    ================ */
 .contact{
-  background-color: var(--light-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -608,7 +683,7 @@ body.dark .project-tech span {
 
 .contact .social-icons a {
   font-size: 22px;
-  color: #333;
+  color: var(--text-dark-color);
   transition: 0.3s;
 }
 
@@ -618,26 +693,46 @@ body.dark .project-tech span {
 
 /* Footer */
 .footer {
-  background-color: var(--dark-color);
+  background-color: color-mix(in srgb, var(--dark-color) 85%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--text-light-color);
-  padding: 1.5em;
+  padding: 50px 20px 30px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
 }
 .footer-title {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 500;
+  opacity: 0.7;
+  order: 2; /* يخلي النص تحت الأيقونات */
+}
+.footer .social-icons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
+  order: 1; /* الأيقونات فوق */
 }
 .footer .social-icons a {
   color: var(--text-light-color);
-  font-size: 1.5em;
-  padding: 15px;
+  font-size: 1.1em;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-circle);
+  background: rgba(255,255,255,0.06);
+  transition: 0.3s ease;
+  text-decoration: none;
 }
 .footer .social-icons a:hover {
-  color: var(--secondary-color);
+  color: var(--text-light-color);
+  background: var(--gradient-main);
+  transform: translateY(-3px);
 }
 /* ============== 
   Media Queries
