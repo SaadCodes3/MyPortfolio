@@ -39,11 +39,11 @@ body {
   --card-border-color: #f0f0f0;
 
   /* ===== Gradients ===== */
-  --gradient-main: linear-gradient(135deg,#00c6ff,#0072ff);
+  --gradient-main: linear-gradient(135deg,  #00c6ff,#0004ff,#ff0080);
 
   /* ===== Shadows ===== */
   --shadow-main: 5px 5px 10px rgba(1, 1, 1, 0.5);
-  --shadow-stronge: 2px 2px 20px 10px rgba(0, 68, 255, 0.4);
+  --shadow-stronge: 2px 2px 20px 10px rgba(82, 118, 218, 0.4);
   --shadow-box-n: 0 0 20px 10px rgba(0,0,0,0.6);
   /* ===== Radius ===== */
   --radius-sm: 6px;
@@ -70,7 +70,7 @@ body.dark {
   --card-border-color: #333333;
 
   /* ===== Gradients ===== */
-  --gradient-main: linear-gradient(#1f6feb, #0d419d);
+  --gradient-main: linear-gradient(135deg,  #00c6ff,#0004ff,#ff0080);
 
   /* ===== Grid background tokens (dark mode) ===== */
   --grid-line: rgba(255, 255, 255, 0.05);
@@ -269,16 +269,11 @@ header {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  /* background: url(assets/images/background.png) no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; */
 }
 .main h2 {
-  color: var(--text-light-color);
+  color: var(--text-dark-color); 
   font-size: 1.4em;
   font-weight: 700;
-  text-shadow: 4px 4px 4px black;
 }
 .main h2 span {
   display: inline-block;
@@ -298,14 +293,12 @@ header {
   25%,75% { opacity: 0; }
 }
 .main h3 {
-  color: var(--text-light-color);
+  color: var(--text-dark-color);
   font-size: 2em;
   font-weight: 700;
   letter-spacing: 1px;
   margin-top: 10px;
   margin-bottom: 30px;
-  text-shadow: 4px 4px 4px black;
-
 }
 .main-btn {
   color: var(--text-light-color);
@@ -325,7 +318,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--shadow-box-n); 
+  box-shadow: var(--shadow-main); 
 }
 .main-btn:hover {
   transform: scale(1.05);
