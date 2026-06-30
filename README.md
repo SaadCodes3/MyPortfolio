@@ -4,7 +4,7 @@
 https://saadcodes3.github.io/MyPortfolio/
 
 ## 📸 Preview
-![Portfolio Screenshot](images/screenshot.png)
+![Portfolio Screenshot](assets/images/screenshot.png)
 
 This is my personal portfolio website developed to showcase my skills and projects in Front-End Development.
 
@@ -13,7 +13,7 @@ The project is built using core web technologies with a strong focus on responsi
 ---
 
 ## 📄 Resume
-[Download my CV](assets/Saad_AlHusseiny_CV.pdf)
+[Download my CV](assets/docs/cv.pdf)
 
 ---
 
