@@ -97,24 +97,7 @@ typeEffect();
 
 // ===== Skills Slider =====
 const slider = document.querySelector(".content.slider");
-
-let isDown = false, startX, scrollLeft;
-
-slider.addEventListener("mousedown", (e) => {
-  isDown = true;
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-
-slider.addEventListener("mouseleave", () => isDown = false);
-slider.addEventListener("mouseup", () => isDown = false);
-
-slider.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  slider.scrollLeft = scrollLeft - (x - startX);
-});
+slider.innerHTML += slider.innerHTML; // Duplicate the content for infinite scrolling
 
 
 // التحديث التلقائي لسطر حقوق الملكية مع المسافات
@@ -137,3 +120,4 @@ if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
     cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
   });
 }
+
