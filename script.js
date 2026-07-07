@@ -121,3 +121,82 @@ if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
   });
 }
 
+// ===== Scroll Indicator =====
+const scrollIndicator = document.querySelector(".scroll-indicator");
+if (scrollIndicator) {
+  scrollIndicator.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = scrollIndicator.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+}
+
+// ===== Hero Stats Counter Animation =====
+(() => {
+  const heroStats = document.querySelector(".hero-stats");
+  if (!heroStats) return;
+
+  const statNumbers = heroStats.querySelectorAll("h3[data-target]");
+  const DURATION = 1600; // ms, between 1-2 seconds
+
+  // Parse a target string like "6+", "100+", "99%", "∞"
+  // into a numeric part and a suffix part.
+  const parseTarget = (raw) => {
+    const match = raw.match(/\d+/);
+    if (!match) return { value: null, suffix: raw }; // e.g. "∞"
+    return { value: parseInt(match[0], 10), suffix: raw.replace(match[0], "") };
+  };
+
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+  const animateCount = (el, value, suffix) => {
+    const start = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min((now - start) / DURATION, 1);
+      const eased = easeOutCubic(progress);
+      const current = Math.round(eased * value);
+
+      el.textContent = `${current}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = `${value}${suffix}`; // lock exact final value
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  // Set initial display state before the animation triggers
+  statNumbers.forEach((el) => {
+    const { value, suffix } = parseTarget(el.dataset.target.trim());
+    el.textContent = value === null ? suffix : `0${suffix}`;
+  });
+
+  const runStatsAnimation = () => {
+    statNumbers.forEach((el) => {
+      const { value, suffix } = parseTarget(el.dataset.target.trim());
+      if (value === null) return; // non-numeric (e.g. ∞) shows immediately, no animation
+      animateCount(el, value, suffix);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          runStatsAnimation();
+          obs.unobserve(entry.target); // run only once, never restarts on scroll back
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(heroStats);
+})();
