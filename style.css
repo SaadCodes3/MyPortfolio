@@ -1301,3 +1301,336 @@ body.dark .moon-toggle {
 body.dark .menu-btn {
   color: white;
 }
+/* Portfolio improvement overrides */
+.hero-kicker {
+  max-width: 620px;
+  margin: 14px 0 0;
+  color: var(--text-dark-color);
+  font-size: 1.05em;
+  line-height: 1.7;
+  opacity: 0.78;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.hero-buttons .main-btn {
+  width: auto;
+  min-width: 150px;
+  margin: 0;
+  border: 1px solid transparent;
+}
+
+.hero-buttons .secondary-btn {
+  background: var(--dark-color);
+  color: var(--text-light-color);
+}
+
+.hero-buttons .ghost-btn {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+.hero-buttons .ghost-btn {
+  border: 1px solid var(--primary-color);
+}
+
+.hero-buttons .ghost-btn:hover {
+  color: var(--text-light-color);
+  background: var(--primary-color);
+}
+
+.project-badge {
+  display: inline-flex;
+  width: max-content;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(31, 111, 235, 0.12);
+  border: 1px solid rgba(31, 111, 235, 0.24);
+  color: var(--primary-color);
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-summary {
+  min-height: 74px;
+  margin: 0 0 16px;
+  color: var(--text-dark-color);
+  font-size: 0.88em;
+  line-height: 1.6;
+  opacity: 0.76;
+}
+
+body.dark .hero-buttons .secondary-btn {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.dark .project-badge {
+  background: rgba(144, 202, 249, 0.12);
+  border-color: rgba(144, 202, 249, 0.25);
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-buttons .main-btn {
+    flex: 1 1 160px;
+    max-width: 230px;
+  }
+
+  .hero-kicker {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .hero-buttons .main-btn {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .project-summary {
+    min-height: auto;
+  }
+}
+
+/* Grouped skills layout */
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skill-group {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(31, 111, 235, 0.22), transparent 48%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.skill-group:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: 0 16px 38px rgba(31, 111, 235, 0.18);
+}
+
+.skill-group:hover::before {
+  opacity: 1;
+}
+
+.skill-group__header,
+.skill-list {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-group__header {
+  margin-bottom: 18px;
+}
+
+.skill-group__eyebrow {
+  display: inline-flex;
+  width: max-content;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(31, 111, 235, 0.12);
+  color: var(--primary-color);
+  border: 1px solid rgba(31, 111, 235, 0.22);
+  font-size: 0.72em;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.skill-group h3 {
+  color: var(--text-dark-color);
+  font-size: 1.05em;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.skill-pill {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  grid-template-areas:
+    "icon name"
+    "icon level";
+  align-items: center;
+  gap: 2px 10px;
+  min-height: 62px;
+  padding: 11px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-pill:hover {
+  transform: translateY(-3px);
+  background: rgba(31, 111, 235, 0.1);
+  border-color: rgba(31, 111, 235, 0.28);
+}
+
+.skill-pill img {
+  grid-area: icon;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.skill-pill--text {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "name"
+    "level";
+}
+
+.skill-pill span {
+  grid-area: name;
+  color: var(--text-dark-color);
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.skill-pill small {
+  grid-area: level;
+  color: var(--primary-color);
+  font-size: 0.74em;
+  font-weight: 700;
+  opacity: 0.86;
+}
+
+body.dark .skill-group {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+}
+
+body.dark .skill-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .skills-groups {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-group {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Requested polish fixes */
+.main-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 52px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background-clip: padding-box;
+}
+
+.hero-buttons .main-btn {
+  border: 0;
+}
+
+.navigation a {
+  position: relative;
+  overflow: hidden;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 5px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--gradient-main);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navigation a:hover::after,
+.navigation a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.scroll-indicator {
+  bottom: 14px;
+}
+
+@media (max-width: 1024px) {
+  .navigation a::after {
+    left: 20px;
+    right: 20px;
+    bottom: 9px;
+    background: var(--text-light-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .scroll-indicator {
+    bottom: 6px;
+  }
+}

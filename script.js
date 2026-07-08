@@ -95,9 +95,6 @@ function typeEffect() {
 
 typeEffect();
 
-// ===== Skills Slider =====
-const slider = document.querySelector(".content.slider");
-slider.innerHTML += slider.innerHTML; // Duplicate the content for infinite scrolling
 
 
 // التحديث التلقائي لسطر حقوق الملكية مع المسافات

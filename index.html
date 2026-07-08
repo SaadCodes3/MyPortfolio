@@ -2,12 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Saad ALHusseiny</title>
+    <title>Saad ALHusseiny | Front-End Developer</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="Saad ALHusseiny" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Saad ALHusseiny | Front-End Developer" />
+    <meta
+      property="og:description"
+      content="Explore Saad ALHusseiny's front-end projects, skills, CV, and contact links."
+    />
+    <meta property="og:image" content="assets/images/screenshot.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Front-End Developer Portfolio of Saad ALHusseiny. Explore my projects, skills, and contact information."
+      content="Front-End Developer portfolio for Saad ALHusseiny, showcasing responsive web projects built with HTML, CSS, JavaScript, React, and modern UI patterns."
     />
     <meta
       name="keywords"
@@ -30,7 +39,7 @@
     <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- Scroll button -->
-    <button id="scrollTopBtn">▲</button>
+    <button id="scrollTopBtn" aria-label="Scroll to top">&#9650;</button>
 
     <!-- Header -->
     <header>
@@ -141,10 +150,14 @@
 
         <h2>Hello, I'm Saad<br /><span id="typing"></span></h2>
 
+        <p class="hero-kicker">Frontend interfaces built with clarity, motion, and responsive detail.</p>
+
         <h3>First, solve the problem. Then write the code.</h3>
 
         <div class="hero-buttons">
           <a href="#projects" class="main-btn">View My Work</a>
+          <a href="assets/docs/cv.pdf" class="main-btn secondary-btn" download="Saad_AlHusseiny_CV">Download CV</a>
+          <a href="#contact" class="main-btn ghost-btn">Contact Me</a>
         </div>
 
         <div class="hero-divider" aria-hidden="true"></div>
@@ -154,7 +167,7 @@
           <div class="stat-card-wrap">
             <span class="stat-card__glow" aria-hidden="true"></span>
             <div class="stat-card">
-              <div class="stat-icon" aria-hidden="true">🚀</div>
+              <div class="stat-icon" aria-hidden="true">01</div>
               <h3 data-target="6+">0</h3>
               <p>Projects</p>
             </div>
@@ -163,7 +176,7 @@
           <div class="stat-card-wrap">
             <span class="stat-card__glow" aria-hidden="true"></span>
             <div class="stat-card">
-              <div class="stat-icon" aria-hidden="true">💻</div>
+              <div class="stat-icon" aria-hidden="true">02</div>
               <h3 data-target="5">0</h3>
               <p>Technologies</p>
             </div>
@@ -172,7 +185,7 @@
           <div class="stat-card-wrap">
             <span class="stat-card__glow" aria-hidden="true"></span>
             <div class="stat-card">
-              <div class="stat-icon" aria-hidden="true">⚡</div>
+              <div class="stat-icon" aria-hidden="true">03</div>
               <h3 data-target="&#8734;">&#8734;</h3>
               <p>Learning</p>
             </div>
@@ -199,67 +212,108 @@
     <!-- Skills Section -->
     <section class="cards" id="Skills">
       <h2 class="title" data-aos="fade-up">Skills</h2>
-      <div class="slider-wrapper">
-        <div class="content slider" data-aos="fade-up" data-aos-delay="200">
-          <div class="skill-card">
-            <!-- HTML -->
-            <div class="icon">
+      <div class="skills-groups" data-aos="fade-up" data-aos-delay="200">
+        <article class="skill-group">
+          <div class="skill-group__header">
+            <span class="skill-group__eyebrow">Frontend</span>
+            <h3>Building responsive interfaces</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-pill">
               <img src="assets/icons/html5.svg" alt="HTML" />
+              <span>HTML</span>
+              <small>Strong</small>
             </div>
-            <div class="info"><h3>HTML</h3></div>
-          </div>
-
-          <div class="skill-card">
-            <!-- CSS -->
-            <div class="icon">
+            <div class="skill-pill">
               <img src="assets/icons/css.svg" alt="CSS" />
+              <span>CSS</span>
+              <small>Strong</small>
             </div>
-            <div class="info"><h3>CSS</h3></div>
-          </div>
-
-          <div class="skill-card">
-            <!-- JavaScript -->
-            <div class="icon">
+            <div class="skill-pill">
               <img src="assets/icons/javascript.svg" alt="JavaScript" />
+              <span>JavaScript</span>
+              <small>Working</small>
             </div>
-            <div class="info"><h3>JavaScript</h3></div>
-          </div>
-
-          <div class="skill-card">
-            <!-- React -->
-            <div class="icon">
+            <div class="skill-pill">
               <img src="assets/icons/react.svg" alt="React" />
+              <span>React</span>
+              <small>Working</small>
             </div>
-            <div class="info"><h3>React</h3></div>
-          </div>
-
-          <div class="skill-card">
-            <!-- Tailwind -->
-            <div class="icon">
+            <div class="skill-pill">
               <img src="assets/icons/tailwindcss.svg" alt="Tailwind CSS" />
+              <span>Tailwind CSS</span>
+              <small>Working</small>
             </div>
-            <div class="info"><h3>Tailwind CSS</h3></div>
           </div>
+        </article>
 
-          <div class="skill-card">
-            <!-- GitHub -->
-            <div class="icon">
-              <img src="assets/icons/github.svg" alt="GitHub" />
+        <article class="skill-group">
+          <div class="skill-group__header">
+            <span class="skill-group__eyebrow">Backend</span>
+            <h3>Understanding APIs and data flow</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-pill skill-pill--text">
+              <span>REST APIs</span>
+              <small>Working</small>
             </div>
-            <div class="info"><h3>GitHub</h3></div>
+            <div class="skill-pill skill-pill--text">
+              <span>JSON</span>
+              <small>Strong</small>
+            </div>
+            <div class="skill-pill skill-pill--text">
+              <span>Authentication Basics</span>
+              <small>Learning</small>
+            </div>
           </div>
+        </article>
 
-          <div class="skill-card">
-            <!-- Git -->
-            <div class="icon">
+        <article class="skill-group">
+          <div class="skill-group__header">
+            <span class="skill-group__eyebrow">Tools</span>
+            <h3>Shipping and collaboration workflow</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-pill">
               <img src="assets/icons/git.svg" alt="Git" />
+              <span>Git</span>
+              <small>Working</small>
             </div>
-            <div class="info"><h3>Git</h3></div>
+            <div class="skill-pill">
+              <img src="assets/icons/github.svg" alt="GitHub" />
+              <span>GitHub</span>
+              <small>Working</small>
+            </div>
+            <div class="skill-pill">
+              <img src="assets/icons/vercel.svg" alt="Vercel" />
+              <span>Vercel</span>
+              <small>Working</small>
+            </div>
           </div>
-        </div>
+        </article>
+
+        <article class="skill-group">
+          <div class="skill-group__header">
+            <span class="skill-group__eyebrow">Design</span>
+            <h3>Usable layouts and visual polish</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-pill skill-pill--text">
+              <span>Responsive Design</span>
+              <small>Strong</small>
+            </div>
+            <div class="skill-pill skill-pill--text">
+              <span>UI Details</span>
+              <small>Working</small>
+            </div>
+            <div class="skill-pill skill-pill--text">
+              <span>Accessibility Basics</span>
+              <small>Learning</small>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
-
     <!-- Projects Section -->
     <section class="projects" id="projects">
       <h2 class="title" data-aos="fade-up">Projects</h2>
@@ -281,7 +335,11 @@
               />
             </div>
             <div class="project-info">
+              <span class="project-badge">Featured</span>
               <h3 class="project-title">Weather-App</h3>
+              <p class="project-summary">
+                A clean weather dashboard that fetches city forecasts and presents key details in a simple responsive layout.
+              </p>
               <div class="project-tech">
                 <p class="tech-label">Tech:</p>
                 <span>HTML</span>
@@ -318,7 +376,11 @@
               />
             </div>
             <div class="project-info">
+              <span class="project-badge">Featured</span>
               <h3 class="project-title">Matjary</h3>
+              <p class="project-summary">
+                A React e-commerce experience with product browsing, polished visuals, and a smooth path from discovery to action.
+              </p>
               <div class="project-tech">
                 <p class="tech-label">Tech:</p>
                 <span>HTML</span>
@@ -357,7 +419,11 @@
               />
             </div>
             <div class="project-info">
+              <span class="project-badge">Featured</span>
               <h3 class="project-title">PharaohsLegacy</h3>
+              <p class="project-summary">
+                A cultural web experience focused on Egyptian heritage, blending React components with immersive visual storytelling.
+              </p>
               <div class="project-tech">
                 <p class="tech-label">Tech:</p>
                 <span>HTML</span>
@@ -500,7 +566,7 @@
     <!-- Footer -->
     <footer class="footer">
       <p class="footer-title" id="copyright-text">
-        Copyright © 2024 SaadALHusseiny
+        Copyright &copy; 2024 SaadALHusseiny
       </p>
       <div class="social-icons">
         <a
