@@ -269,9 +269,11 @@ header {
   font-size: 1.1em;
   font-weight: 700;
   padding: 10px 15px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .navigation a:hover {
   color: var(--secondary-color);
+  text-shadow: 0px 0px 8px rgba(2, 10, 22, 0.664);
 }
 /* ================
     Main Section
@@ -1154,6 +1156,7 @@ body.dark .project-tech span {
   .navigation a:hover {
     background-color: var(--primary-color);
     color: var(--text-light-color);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
   }
   .title {
     font-size: 1.8em;
@@ -1588,7 +1591,6 @@ body.dark .skill-pill {
 
 .navigation a {
   position: relative;
-  overflow: hidden;
 }
 
 .navigation a::after {
